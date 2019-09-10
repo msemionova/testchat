@@ -1,0 +1,418 @@
+/*vdskljglsdk*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/********* BASIC COMPONENTS *********/
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 20px;
+    color: #1d1d1d;
+
+}
+
+header {
+    order: 1;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 66px;
+    border-bottom: #DFE3E9 solid 1px;
+}
+
+footer,
+.user form {
+    order: 3;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 80%;
+    color: #F5A623;
+    z-index: 999;
+}
+/*footer*/
+.guest {
+    background-color: #FFEED1;
+    color: #F5A623;
+}
+
+.guest form {
+    /*display: flex;*/
+    text-align: center;
+}
+
+/*footer*/
+.user {
+    display: none;
+    background-color: #ffffff;
+    border-top: #DFE3E9 solid 1px;
+    color: white;
+    z-index: 999;
+}
+
+.btn {
+    margin: 20px 20px 20px 20px;
+    flex: 0 0 35px;
+    border-radius: 6px;
+    border-color: transparent;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+
+.container {
+    display: flex;
+    flex-flow: initial;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100vh;
+}
+
+/* CUSTOM SCROLLBAR */
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(179, 179, 179, 0.81);
+    border-radius: 10px;
+}
+
+
+/********* SIDEBAR COMPONENTS *********/
+
+.sidebar {
+    order: 1;
+    flex: 0 0 20%;
+    background-image: url("../img/background-left.png");
+    background-size: cover;
+}
+
+.sidebar-frame {
+    position: fixed;
+    width: 20%;
+    overflow-y: scroll;
+    top: 0;
+    bottom: 0;
+}
+
+/* LOGO */
+
+.logo {
+    margin: 20px 0px 0px 20px;
+}
+
+.logo p {
+    color: white;
+    display: inline;
+    vertical-align: middle;
+}
+
+.logo img {
+    display: inline;
+    vertical-align: middle;
+    width: 40px;
+}
+
+/* USERS ONLINE */
+
+.status-title, .rooms-title {
+    margin: 30px 0px 10px 20px;
+    font-size: 70%;
+    text-transform: uppercase;
+    color: #949494;
+}
+
+.status-title p, .rooms-title p {
+    display: inline;
+}
+
+#status-count {
+    margin-left: 10px;
+}
+
+/* USER IN LIST */
+.active-room,
+.active-room li:hover,
+.active-room li:focus,
+.active-room li:active {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    background-size: 300px 100px;
+    color: white;
+    cursor: pointer;
+}
+
+.users-list, .rooms-list {
+    display: block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    overflow: hidden;
+    transition-duration: 0.5s;
+    transition-property: color, background-color;
+
+    font-size: 80%;
+    color: #949494;
+}
+
+.users-list li:hover, .rooms-list li:hover,
+.users-list li:focus, .rooms-list li:focus,
+.users-list li:active, .rooms-list li:active{
+    background-color: rgba(29, 29, 29, 0.41);
+    background-size: 300px 100px;
+    color: white;
+    cursor: pointer;
+}
+
+.users-list ul, .rooms-list ul {
+    list-style: none;
+}
+
+.users-list li, .rooms-list li {
+    padding: 10px 20px 10px 20px;
+}
+
+.users-list p, .rooms-list p {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    background-color: gray;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.online {
+    background-color: #84c524;
+}
+
+.square {
+    height: 40px;
+    width: 40px;
+    background-color: #eac22b;
+    border-radius: 16%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    border: rgba(194, 201, 220, 0.5) solid 2px;
+}
+
+/********* CHAT COMPONENTS *********/
+
+.chat {
+    order: 2;
+    flex: 2 1 64%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*justify-content: center;*/
+    /*background-color: white;*/
+}
+
+.chat-wrap {
+    order: 2;
+    flex-grow: 2;
+    flex-shrink: 1;
+    flex-basis: 80%;
+}
+
+.chat-frame {
+    position: fixed;
+    width: 64%;
+    overflow-y: scroll;
+    top: 80px;
+    bottom: 80px;
+}
+
+/* wide version*/
+.wide {
+    width: 80%;
+}
+
+.chat-title {
+    font-size: 120%;
+    margin: 20px 0px 0px 30px;
+}
+
+/* DATE */
+.date {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.date p {
+    flex: 1 0 155px;
+    font-size: 70%;
+    color: #9ea5b8;
+}
+
+.line {
+    flex: 2 1 40%;
+    height: 1px;
+    background-color: #DFE3E9;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* MESSAGE */
+.message {
+    padding: 10px 20px 10px 20px;
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+}
+
+.message:hover {
+    background-color: rgba(242, 247, 249, 0.8);
+
+}
+.message span {
+    flex: 0 0 40px;
+    cursor: pointer;
+}
+.message .square {
+    margin-right: 12px;
+}
+
+.message__content-head {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.message__content-name {
+    flex: 0 0 auto;
+    margin-right: 8px;
+    font-size: 80%;
+    font-weight: 700;
+}
+
+.message__content-name:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.message__content-time {
+    flex: 0 0 auto;
+    font-size: 70%;
+    color: #9ea5b8;
+}
+
+.message__content-text {
+    font-size: 80%;
+}
+
+/* FOOTER FOR GUEST */
+.username {
+    margin-left: 8px;
+    height: 35px;
+    border: #F5A623 solid 1px;
+    border-radius: 6px;
+    text-indent: 8px;
+    font-size: 14px;
+}
+
+.btn-join {
+    margin: 8px;
+    height: 35px;
+    background-color: #F5A623;
+}
+
+/* FOOTER FOR USER */
+.input-message {
+    margin-left: 72px;
+    padding: 10px 10px 10px 10px;
+    flex: 2 1 400px;
+    height: auto;
+    border: transparent;
+    background-color: #EFF4F6;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.btn-send {
+    margin-left: 8px;
+    height: 35px;
+    flex: 0 1 80px;
+    background-color: #0fb682;
+}
+
+
+/********* INFO COMPONENTS *********/
+.info {
+    order: 3;
+    flex: 1 0 16%;
+    background-image: url("../img/background-right.png");
+    background-size: cover;
+
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* USER IN LIST */
+.info-list {
+    margin: 40px 0px 0px 20px;
+    font-size: 80%;
+    color: #949494;
+}
+
+.info-list ul {
+    list-style: none;
+}
+
+.info-list li {
+    margin-top: 16px;
+}
+
+.info-list p {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+
+.your-photo {
+    height: 200px;
+    background-color: #eac22b;
+}
+
+.btn-logout {
+    flex: 0 0 35px;
+    background-color: #333333;
+}
